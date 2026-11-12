@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --aster-ivory: #f7f3ee;
+    --aster-offwhite: #fbfaf7;
+    --aster-charcoal: #1f1a17;
+    --aster-burgundy: #7a1f2b;
+    --aster-gold: #c6a75e;
+    --aster-muted: #6b635c;
+}
+
+@layer base {
+    body {
+        @apply bg-[var(--aster-offwhite)] text-[var(--aster-charcoal)] antialiased;
+    }
+}
+
+@layer utilities {
+    .font-display {
+        font-family: 'Cormorant Garamond', Georgia, serif;
+    }
+
+    .font-body {
+        font-family: 'Manrope', ui-sans-serif, system-ui, sans-serif;
+    }
+}

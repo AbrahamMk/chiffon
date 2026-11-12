@@ -1,0 +1,34 @@
+<?php
+
+namespace App\Domains\Inventory\Models;
+
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\SoftDeletes;
+
+class Supplier extends Model
+{
+    use SoftDeletes;
+
+    protected $fillable = [
+        'name',
+        'contact_name',
+        'phone',
+        'email',
+        'address',
+        'notes',
+        'is_active',
+    ];
+
+    protected function casts(): array
+    {
+        return [
+            'is_active' => 'boolean',
+        ];
+    }
+
+    public function purchases(): HasMany
+    {
+        return $this->hasMany(Purchase::class);
+    }
+}
